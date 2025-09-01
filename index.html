@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NASA Daily Space Photo & Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <nav class="navbar">
+      <button id="dailyBtn" onclick="showSection('photo')" style="display:none;">Daily</button>
+      <button id="galleryBtn" onclick="showSection('gallery')">Gallery</button>
+      <button id="favoritesBtn" onclick="showSection('favorites')">Favorites</button>
+    </nav>
+
+    <header>
+      <h1>NASA Daily Space Photo</h1>
+      <p id="headerText">Select a date or browse the gallery!</p>
+    </header>
+
+
+    <section id="photoSection">
+      <div class="date-section">
+        <input type="date" id="dateInput" max="" />
+        <button onclick="getPhotoByDate()">Get</button>
+        <button id="addToFavoritesBtn" >⭐ Add to Favorites</button>
+      </div>
+
+      <section id="loader" class="hidden">Loading...</section>
+
+      <section class="photo-card hidden" id="photoCard">
+        <p class="photo-date" id="date"></p>
+        <img id="apodImage" alt="NASA Space Photo" />
+        <h2 id="title"></h2>
+        <p id="description"></p>
+      </section>
+    </section>
+
+
+    <section id="gallerySection" class="hidden">
+      <h2>Last 7 Days Gallery</h2>
+      <div id="galleryContainer" class="gallery-container"></div>
+    </section>
+
+
+    <section id="favoritesSection" class="hidden">
+      <h2>My Favorites</h2>
+      <div id="favoritesContainer" class="gallery-container"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
